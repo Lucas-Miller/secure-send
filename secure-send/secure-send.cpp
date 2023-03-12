@@ -32,7 +32,9 @@ void receiveMessages(SOCKET sock, const sockaddr_in* localIpAddr)
         inet_ntop(AF_INET, &localIpAddr->sin_addr, localIpAddrStr, INET_ADDRSTRLEN);
 
         if (strcmp(remoteIpAddr, localIpAddrStr) != 0) {
-            std::cout << "/nReceived message from " << remoteIpAddr << ": " << buffer << std::endl;
+            std::cout << "\nReceived message from " << remoteIpAddr << ": " << buffer << std::endl;
+            std::cout << "Enter a message to send: ";
+            std::cout.flush();
         }
 
         // check if the message is 'Goodbye'
